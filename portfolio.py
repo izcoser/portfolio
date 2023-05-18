@@ -7,7 +7,7 @@ def make_nft_request(collection_slug: str) -> dict:
     r = requests.get(f"https://api.opensea.io/api/v1/collection/{collection_slug}/stats/")
     time.sleep(1)
     try:
-        return r.json()['stats']['floor_price']
+        return r.json()['stats']['floor_price'] or 0
     except Exception as e:
         print(e)
         return 0
