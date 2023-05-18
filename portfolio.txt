@@ -5,12 +5,20 @@
 #    The format is:
 #    token-id: number
 #    If it is an NFT, append NFT_ to the start of the collection slug.
+
 #    You can also define the currency you want with?
 #    currency: brl
 #    (defaults to usd if unspecified).
-#    Lastly, you can also define the time between fetches in seconds:
+
+#    You can define the time between fetches in seconds:
 #    refetch: 600
 #    (defaults to 180, anything less than that might run into API rate limits).
+
+#    It is also possible to get the total portfolio value in BTC or ETH, with the following:
+#    show-btc-value: true
+#    show-eth-value: true
+#    Both default to false.
+
 #    For example:
 
 #        ethereum: 200
@@ -19,6 +27,7 @@
 #        NFT_milady: 274
 #        currency: brl
 #        refetch: 180
+#        show-btc-total: true
 
 #    The token-id must be from this list: https://api.coingecko.com/api/v3/coins/list
 #    For NFTs, the endpoint used is https://api.opensea.io/api/v1/collection/{collection_slug}/stats (https://docs.opensea.io/reference/retrieving-collection-stats)
@@ -28,3 +37,5 @@ chainlink: 15344
 bitcoin: 1
 NFT_milady: 348
 currency: usd
+show-btc-value: true
+show-eth-value: true
